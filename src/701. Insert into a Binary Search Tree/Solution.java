@@ -37,4 +37,23 @@ class Solution {
         }
         return root;
     }
+    
+    
+    public TreeNode insertIntoBST(TreeNode root,int value) {
+        if(root == null) return new TreeNode(value);
+        if(value<root.val){//kiem ben phai
+            if(root.left == null){
+                root.left = new TreeNode(value);
+            }else{
+                insertIntoBST(root.left,value);
+            }
+        }else{
+            if(root.right == null){
+                root.right = new TreeNode(value);
+            }else{
+                insertIntoBST(root.right,value);
+            }
+        }
+        return root;
+    }
 }
